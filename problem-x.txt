@@ -1,4 +1,4 @@
-
+x x x x
 next
 text
 exit
@@ -17,6 +17,6 @@ crux
 lynx
 exec
 onyx
-ixia
 hoax
 flax
+x x x x
