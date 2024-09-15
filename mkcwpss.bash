@@ -5,6 +5,7 @@ OUTDIR=mp3s
 CW="$(which cwwav)"
 LAME="$(which lame)" 
 LAMEOPTS="-m j --preset medium"
+FREQ=500
 
 CHARSPEED=35
 MAXFARNSWORTH=35
@@ -25,7 +26,8 @@ for fn in $PSS/* ; do
         fi
     fi
     echo "Psalm $ps  ($COUNT)  Speed=$CHARSPEED  Farnsworth=$FARNSWORTH"
-    $CW --wpm=$CHARSPEED --farnsworth=$FARNSWORTH --output=$OUTDIR/$ps.wav $fn
+    $CW --wpm=$CHARSPEED --farnsworth=$FARNSWORTH --frequency=$FREQ \
+        --output=$OUTDIR/$ps.wav $fn
     $LAME $LAMEOPTS $OUTDIR/$ps.wav $OUTDIR/$ps.mp3
     rm $OUTDIR/$ps.wav
 done
